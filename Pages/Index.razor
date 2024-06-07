@@ -1,4 +1,27 @@
 @page "/"
 
 <h1>Blazing Pizzas</h1>
+
+@code {
+
+	private List<PizzaSpecial> pizzas;
+
+    protected override async Task OnInitializedAsync()
+
+    {
+
+        pizzas.AddRange(new List<PizzaSpecial>
+        {
+            new PizzaSpecial { Description = "KLassisk Quattro", BasePrice = 100, ImageUrl = "img/pizzas/salad.jpg" },
+            new PizzaSpecial { Description = "Fyra Ostar", BasePrice = 110, ImageUrl = "img/pizzas/cheese.jpg" },
+            new PizzaSpecial { Description = "Pauls Favorit Margarita", BasePrice = 190, ImageUrl = "img/pizzas/Margherita.jpg" },
+            new PizzaSpecial { Description = "Köttfärs Special", BasePrice = 200, ImageUrl = "img/pizzas/meaty.jpg" },
+            new PizzaSpecial { Description = "Svamppizza vego", BasePrice = 110, ImageUrl = "img/pizzas/mushroom.jpg" },
+            new PizzaSpecial { Description = "Pepperoni", BasePrice = 190, ImageUrl = "img/pizzas/pperoni.jpg" },
+            new PizzaSpecial { Description = "Baconator", BasePrice = 200, ImageUrl = "img/pizzas/bacon.jpg" },
+
+        });
+
+    }
+}
 		
