@@ -1,10 +1,29 @@
 @page "/"
 
+<div> class="main"
 <h1>Blazing Pizzas</h1>
+<ul class="pizza-cards">
+
+    @if (pizzas != null)
+    {
+        @foreach (var pizza in pizzas)
+        {
+            <li style="background-image: url(@pizza.ImageUrl)">
+                <div class="pizza-info">
+                    <span> Title @pizza.Description</span>
+                    <p>@pizza.GetFormattedBasePrice() kr </p>
+                   
+                </div>
+            
+            </li>
+                    }
+    }
+    </ul>
+</div>
 
 @code {
 
-	private List<PizzaSpecial> pizzas;
+	private List<PizzaSpecial> pizzas = new();
 
     protected override async Task OnInitializedAsync()
 
